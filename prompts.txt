@@ -1,0 +1,274 @@
+PROMPT AUDIT LOG FOR MetaCTO Tech Lead Interview
+==============================================
+
+Prompt #1 (2025-09-13):
+"For each prompt I give you, write to a file prompts.txt within this directory ./job-search/MetaCTO-Tech-Lead/interviews/coding-test-1-metacto-assignment.py , so I can audit the work."
+
+---
+
+Prompt #2 (2025-09-13):
+"Copy file:///Users/branndon/Downloads/assignment.pdf to the interviews directory"
+
+---
+
+Prompt #3 (2025-09-13):
+"I've created a txt version of the pdf available at job-search/MetaCTO-Tech-Lead/interviews/assignment.txt, read it to understand our goal.
+
+We will be architecting a 'Feature Voting System'. Pay special attention to the 'What to Build' and 'What We'll Be Evaluating' sections, and compare it to the role/languages specified in job-search/MetaCTO-Tech-Lead/job-posting.md.
+
+We'll use Django along with simple JWT for the backend. We will utilize a local .sqlite database rather than postgres and AWS for this demo app.
+
+The final project should start and be available simply by executing 'docker compose up -d'.
+
+Do not create configuration files or database tables manually, use proper commands such as 'npm install' when adding packages rather than directly editing/creating the configurations.
+
+First step is to fully understand the task and work together on creating an implementation plan, saved as .md in the new project root. We will refer to this throughout and tweak as necessary.
+
+Overarching guidelines for ALL code edited or created:
+- Keep code DRY, SOC and KISS
+- Do not over-engineer what can be done simply
+- Simple, stable, secure should be benchmark
+
+You are in plan mode, so think through the project clearly, and we will iterate on the plan until it's solid. Once we have a solid plan, we will move to implementation.
+
+Ask clarifying questions if needed."
+
+---
+
+Prompt #4 (2025-09-13):
+"Great. Save that to IMPLEMENTATION.md in the newly created 'feature-voting-system' directory with the following changes:
+Use the latest django, no specific version should be mentioned.
+Ensure the final structure and files are generated using the correct shell commands and not manually created.
+vote_count should be a related field or property, not a direct integer field. There will be upvotes and downvotes, so plan accordingly.
+Rather than a single 'features' endpoint, use 'feature' for managing a single feature, and 'features' for larger queries across multiple features.
+Configurations setup such as host, port, superuser credentials, etc should be read from .env rather than be integrated into files
+Before implementing any feature logic, create the most basic simple test cases with expectations, then implement the logic required to make the test pass.
+
+Be sure to save the previous prompt and this one to prompts.txt"
+
+---
+
+Prompt #5 (2025-09-13):
+"OK, we will iterate as we go. Speed and POC are top of mind. We have about 90 minutes remaining, so let's start simple. Create the django setup first, working locally with a .venv and only build the user registration/login features for now. Create a .env file in the repo root and add realistic values for the initial setup. Once django is setup, use simple curl commands to test registration functionality"
+
+---
+
+Prompt #6 (2025-09-13):
+"yes I have preedit hooks setup for claude code that prevents access to secrets. name it env.txt and I'll rename it later"
+
+---
+
+Prompt #7 (2025-09-13):
+"I renamed env.txt already to .env so use what you wrote before. Also remember, always update prompts.txt first one you receive a prompt. My last prompt or two were not recorded, so check what's missing and add it before continuing."
+
+---
+
+Prompt #8 (2025-09-13):
+"Great! The next step should be an equally simple frontend that I can manually test. Do not write system tests yet. I should be able to register, login, and logout, do not manage account deletion or other statuses for this POC"
+
+---
+
+Prompt #9 (2025-09-13):
+"You were starting with an HTML and Javascript frontend, but out of scope. We tested functionality, the goal here is to get the frontend POC up and running using job-search/MetaCTO-Tech-Lead/interviews/feature-voting-system/IMPLEMENTATION.md as the guide"
+
+---
+
+Prompt #10 (2025-09-13):
+"update prompts.txt with missing prompts, and do not add the "response" in the file as you had before"
+
+---
+
+Prompt #11 (2025-09-13):
+"Now, your path about opening xcode and starting a new project, is this somethig we do only during initial project creation, or will the users testing the docker project be required to do any complex setup initially?"
+
+---
+
+Prompt #12 (2025-09-13):
+"Read assignment.txt, your suggestion of a web frontend with react is indeed easier, but the instructions state 'A frontend UI: CHOOSE ONE native mobile: iOS or Android'"
+
+---
+
+Prompt #13 (2025-09-13):
+"can we not create an ios FeatureVoting.app which would abstract away some of the complexities? What will the user requirements be for setup?"
+
+---
+
+Prompt #14 (2025-09-13):
+"Great, use option 1 and begin the work
+Option 1: Pre-built .app for Simulator ⭐ Recommended
+
+  User Requirements:
+  - macOS with Xcode installed (free from App Store)
+  - Just run: open FeatureVoting.app
+
+  Setup Process:
+  1. docker-compose up -d (starts backend)
+  2. open mobile/FeatureVoting.app (launches iOS app in simulator)
+
+  What we'd create:
+  # Build the actual Xcode project
+  xcodebuild -project FeatureVoting.xcodeproj \
+             -scheme FeatureVoting \
+             -destination 'platform=iOS Simulator,name=iPhone 15' \
+             -derivedDataPath build"
+
+---
+
+Prompt #15 (2025-09-13):
+"I see you manually creating complex files like FeatureVoting.xcodeproj/project.pbxproj, are there no build commands that generate this for us? remember, by using commands we reduce errors"
+
+---
+
+Prompt #16 (2025-09-13):
+"why are you manuyally managing versions and not letting the install process set these up?"
+
+---
+
+Prompt #17 (2025-09-13):
+"We are beign tested on not only the final product, but also how we got there, so I will stick to the instructions and use native swift code. If you need me to run something like xcodegen or open xcode to set it up, let me know what to do, and keep updating prompts.txt every message I send"
+
+---
+
+Prompt #18 (2025-09-13):
+"use option 1.
+Option 1: Use Xcode (Standard/Recommended)
+  1. Open Xcode
+  2. File → New → Project
+  3. Choose 'iOS' → 'App'
+  4. Configure:
+    - Product Name: FeatureVoting
+    - Bundle Identifier: com.example.featurevoting
+    - Language: Swift
+    - Interface: SwiftUI
+    - Use Core Data: No
+  5. Save to: job-search/MetaCTO-Tech-Lead/interviews/feature-voting-system/mobile/
+  6. Replace the auto-generated files with our SwiftUI code
+
+Note: xcode is being downloaded, it's 3gb, what can we do to be proactive in the meantime?"
+
+---
+
+Prompt #19 (2025-09-13):
+"no manual sleeps, just check again"
+
+---
+
+Prompt #20 (2025-09-13):
+"great, review the job-search/MetaCTO-Tech-Lead/interviews/feature-voting-system/IMPLEMENTATION.md plan and create tests for django, remember KISS and do not over complicate"
+
+---
+
+Prompt #21 (2025-09-13):
+"great, review all backend requirements once more. Have we covered all requirements? Are the endpoints secure against attacks?"
+
+---
+
+Prompt #22 (2025-09-13):
+"we have nested FeatureVoting directories. The inner most has content. I'm ready to setup with xcode, please ensure the directory I select is ready for xcode to install to, removing any manually created files that we don't need and fix the nested directory structure"
+
+---
+
+Prompt #23 (2025-09-13):
+"project is created, xcode is running the ios simulator, now we need to create the use registration/login/logout functionality"
+
+---
+
+Prompt #24 (2025-09-13):
+"before copying and overwriting the autogenerated files, read them to ensure our pre-built files follow the correct structure and versioning data found in the current files"
+
+---
+
+Prompt #25 (2025-09-13):
+"continue to generate the user auth pages"
+
+---
+
+Prompt #26 (2025-09-13):
+"perfect, logout worked, login worked, and duplicate user prevention worked. Let's move on to the voting section of the app"
+
+---
+
+Prompt #27 (2025-09-13):
+"great. Now, the app renders on a required login page, it should start on the list of items to vote on, with a login or register link, and if the user attemps to vote before registering, it should notify them that they need to be logged in to vote"
+
+---
+
+Prompt #28 (2025-09-13):
+"the app footer has an error "Network error: The data couldn't be read because it is missing.", pleaswe address. And change the main button to "Create First Feature" not "Create First Feature""
+
+---
+
+Prompt #29 (2025-09-13):
+"pressing enter in the password field does not submit the login form, but clicking the button does. please fix. Also add a highlight/callout to the option the user has voted on, right now if I upvote something, the count works fine but there's not a visual indication of my vote"
+
+---
+
+Prompt #30 (2025-09-13):
+"good job with the colors for the vote buttons, but they should be gray (as before) when the user has not voted, and only change to green/red for the users vote on that specific feature"
+
+---
+
+Prompt #31 (2025-09-13):
+"nope, my votes count, but the arrow doesn't turn green for upvote or red for downvote"
+
+---
+
+Prompt #32 (2025-09-13):
+"this is not a backend issue and has nothing to do with auth requirements. logged in users are voting and the icons should indicate their vote"
+
+---
+
+Prompt #33 (2025-09-13):
+"when a user creates a new feature, default to one upvote by them"
+
+---
+
+Prompt #34 (2025-09-13):
+"the "description" for the feature I added disappeared? I saw it after I first added it"
+
+---
+
+Prompt #35 (2025-09-13):
+"dragging down ddoesn't refresh the voting screen, please add that, and add a trashcan for users to delete their suggestion, but only mark it as deleted on the backend, and filter by status when querying entries to only show active entries"
+
+---
+
+Prompt #36 (2025-09-13):
+"we don't need delete endpoints, use proper HTTP methods"
+
+---
+
+Prompt #37 (2025-09-13):
+"add all prompts from me that are not yet in prompts.txt to the file and do this everytime I send a command. then fix the error I'm seeing "Failed to build the scheme "FeatureVoting""
+
+---
+
+Prompt #38 (2025-09-13):
+"i deleted my feature vote, that seemed to work, but the footer is showing "Network error: cancelled" now when I attempt a refresh"
+
+---
+
+Prompt #39 (2025-09-13):
+"great, all appears working, refer to our job-search/MetaCTO-Tech-Lead/interviews/feature-voting-system/IMPLEMENTATION.md and job-search/MetaCTO-Tech-Lead/interviews/assignment.txt and let me know what (if anything) remains"
+
+---
+
+Prompt #40 (2025-09-13):
+"Create a readme, use gh to create a public repo. be sure to INCLUDE the .env file as it's dummy data and contains a warning already"
+
+---
+
+Prompt #41 (2025-09-13):
+"note: we are already in a git repo, so find and update the .gitignore in the current repo with the job-search/MetaCTO-Tech-Lead/interviews/feature-voting-system path to ignore, then proceed to init the new repo"
+
+---
+
+Prompt #42 (2025-09-13):
+"is the sqlite database included in the repo? that shouldn't have been submitted. I also see other files that changed during testing, is this expected?
+
+    modified:   backend/db.sqlite3
+    modified:   mobile/FeatureVoting/FeatureVoting.xcodeproj/project.xcworkspace/xcuserdata/branndon.xcuserdatad/UserInterfaceState.xcuse
+
+please ensure prompts.txt is still up to date, move it into the new repo root, and add it so that it is included in my final submission. Since we don't want sql in the repo history, and we only have a single commit, please blow away the .git dir, and reinitialize and update gitignore to ignore the database"
+
+---
